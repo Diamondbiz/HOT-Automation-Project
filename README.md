@@ -7,9 +7,9 @@
 
 
 
-![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
-![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC?style=flat&color=blue)
-![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
+![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC-yellow)
+![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC-blue)
+![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC-red)
 
 
 ![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
