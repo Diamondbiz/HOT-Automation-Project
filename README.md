@@ -1,12 +1,10 @@
-# HOT-POC
-HOT POC Projects
 
-![HOT POC-Automation Project](https://github.com/user-attachments/assets/c89df3cd-008d-4252-8314-641a7fdbcd43)
-
+![Automation Project PoC](https://github.com/user-attachments/assets/1517e0a9-4c0c-4fac-b53f-14a39b0d00a0)
 
 
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
 ![](https://img.shields.io/badge/UIautomator2-green)
+
 
 
 ![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
