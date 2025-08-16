@@ -2,7 +2,7 @@
 ![Automation Project PoC](https://github.com/user-attachments/assets/1517e0a9-4c0c-4fac-b53f-14a39b0d00a0)
 
 
-[![HOT TV App for Android TV](https://img.shields.io/badge/HOT_TV_App-Android_TV_Install_Guide-4285F4?logo=androidtv&logoColor=white)](https://campaign.hot.net.il/routines/installinghottvapp/)
+[![Big Screen Android TV](https://img.shields.io/badge/Big_Screen_Android_TV-Installation_Guide-1976D2?logo=androidtv&logoColor=white)](https://campaign.hot.net.il/routines/installinghottvapp/)
 [![UiAutomator2](https://img.shields.io/badge/UIautomator2-2.29.0-green?logo=android)](https://appium.io/docs/en/2.0/quickstart/uiauto2-driver/)
 
 [![Update Chrome](https://img.shields.io/badge/Chrome-Check%20for%20Updates-blue?logo=google-chrome)](chrome://settings/help)
