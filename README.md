@@ -11,8 +11,7 @@
 
 
 [![GitHub Issues](https://img.shields.io/github/issues/Diamondbiz/HOT-POC?color=ff0000&label=ISSUES)](https://github.com/Diamondbiz/HOT-POC/issues)
-[![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)](https://github.com/appium/appium/releases)
-![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)
+[![Appium Docs](https://img.shields.io/badge/Appium_Docs-2.0-%238a2be2?logo=appium&logoColor=white)](https://appium.io/docs/en/2.0/)
 
 
 
