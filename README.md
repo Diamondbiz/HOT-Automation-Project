@@ -11,16 +11,15 @@
 
 
 [![GitHub Issues](https://img.shields.io/github/issues/Diamondbiz/HOT-POC?color=ff0000&label=ISSUES)](https://github.com/Diamondbiz/HOT-POC/issues)
-![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC?color=green)
-![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
+[![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)](https://github.com/appium/appium/releases)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)
 ![Appium](https://img.shields.io/badge/nodejs-2.11.3-%238a2be2)
 
 
 
-![Node.js](https://img.shields.io/github/package-json/dependency-version/hanangoverman/HOT-POC/node?logo=node.js)
-![npm](https://img.shields.io/github/package-json/dependency-version/hanangoverman/HOT-POC/npm?logo=npm)
-![Node.js & npm](https://img.shields.io/badge/node%20%26%20npm-see%20package.json-orange)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?logo=node.js&logoColor=white)](https://nodejs.org)
+[![npm](https://img.shields.io/npm/v/npm?label=npm%20latest&color=blue&logo=npm)](https://www.npmjs.com/package/npm)
+[![Node.js & npm](https://img.shields.io/static/v1?label=Node.js%20%26%20npm&message=Latest%20LTS&color=brightgreen&logo=node.js&logoColor=white)](https://nodejs.org)
 
 
 
