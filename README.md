@@ -3,7 +3,7 @@
 
 
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
-![](https://img.shields.io/badge/UIautomator2-green)
+[![UiAutomator2](https://img.shields.io/badge/UIautomator2-2.29.0-green?logo=android)](https://appium.io/docs/en/2.0/quickstart/uiauto2-driver/)
 
 ![Chrome](https://img.shields.io/badge/Chrome-124.0.6367.91-blue?logo=google-chrome)
 [![GitHub Stars](https://img.shields.io/github/stars/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/stargazers)
