@@ -17,7 +17,7 @@
 
 
 
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?logo=node.js&logoColor=white)](https://nodejs.org)
+
 [![npm](https://img.shields.io/npm/v/npm?label=npm%20latest&color=blue&logo=npm)](https://www.npmjs.com/package/npm)
 [![Node.js & npm](https://img.shields.io/static/v1?label=Node.js%20%26%20npm&message=Latest%20LTS&color=brightgreen&logo=node.js&logoColor=white)](https://nodejs.org)
 
