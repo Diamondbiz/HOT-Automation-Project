@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
 [![UiAutomator2](https://img.shields.io/badge/UIautomator2-2.29.0-green?logo=android)](https://appium.io/docs/en/2.0/quickstart/uiauto2-driver/)
 
-[![Chrome Version](https://img.shields.io/badge/dynamic/json?url=https://chromedriver.storage.googleapis.com/LATEST_RELEASE&query=$.version&label=Chrome&color=4285F4&logo=google-chrome&logoColor=white)](https://www.google.com/chrome/)
+[![Update Chrome](https://img.shields.io/badge/Chrome-Check%20for%20Updates-blue?logo=google-chrome)](chrome://settings/help)
 [![GitHub Stars](https://img.shields.io/github/stars/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/network/members)
 
