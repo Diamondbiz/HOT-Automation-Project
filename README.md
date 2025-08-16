@@ -10,7 +10,7 @@
 [![GitHub Forks](https://img.shields.io/github/forks/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/network/members)
 
 
-![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
+[![GitHub Issues](https://img.shields.io/github/issues/Diamondbiz/HOT-POC?color=ff0000&label=ISSUES)](https://github.com/Diamondbiz/HOT-POC/issues)
 ![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC?color=green)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)
