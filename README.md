@@ -5,5 +5,5 @@ HOT POC Projects
 
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg)
-![]https://img.shields.io/badge/any_text-you_like-blue
+![]https://img.shields.io/badge/
 
