@@ -19,5 +19,5 @@
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
 
 
-![Stars](https://img.shields.io/badge/stars-100-yellow?style=flat)
-![Forks](https://img.shields.io/badge/forks-20-blue?style=flat)
+![Stars](https://img.shields.io/badge/stars-yellow?style=flat)
+![Forks](https://img.shields.io/badge/forks-blue?style=flat)
