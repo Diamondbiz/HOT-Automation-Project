@@ -7,3 +7,9 @@ HOT POC Projects
 
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
 
+![](https://img.shields.io/github/stars)
+![](https://img.shields.io/github/forks)
+![](https://img.shields.io/github/tag)
+![](https://img.shields.io/github/release)
+![](https://img.shields.io/github/issues)
+![](https://img.shields.io/bower)
