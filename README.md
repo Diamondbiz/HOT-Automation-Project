@@ -82,28 +82,24 @@ Soft:
 
 
 7. Google Chrome browser- Last version source: https://chromereleases.googleblog.com/
-CLI: version check on MAC:
-     GUI Method:
-                 1. Open Google Chrome
-                 2. Click Chrome → About Google Chrome in the menu bar
-                 3. You'll see the full version (e.g., 124.0.6367.91)
-Version update:
-                 1. Open Google Chrome
-                 2. Click Chrome → About Google Chrome in the menu bar
-                 3. You'll see the full version (e.g., 124.0.6367.91)
-                 4. Click on update and then restart the browser
+-CLI: version check on MAC:
+   -GUI Method:
+   1. Open Google Chrome
+   2. Click Chrome → About Google Chrome in the menu bar
+   3. You'll see the full version (e.g., 124.0.6367.91)
+-Version update:
+   1. Open Google Chrome
+   2. Click Chrome → About Google Chrome in the menu bar
+   3. You'll see the full version (e.g., 124.0.6367.91)
+   4. Click on update and then restart the browser
     
-Command Line Alternative (macOS)
-     If you installed Chrome via Homebrew: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
-     Update homebrew (if needed): brew update && brew upgrade
-     Version Update via CLI:
-                 1. Brew upgrade --cask google-chrome
-                 2. Veryfy update: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
-                 3. Restart the browser
-
-
-
-
+-Command Line Alternative (macOS)
+     * If you installed Chrome via Homebrew: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+     * Update homebrew (if needed): brew update && brew upgrade
+     * Version Update via CLI:
+         1. Brew upgrade --cask google-chrome
+         2. Veryfy update: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+         3. Restart the browser
 
 PoC Project main goals:
 
