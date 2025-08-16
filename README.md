@@ -1,6 +1,6 @@
 # HOT-POC
 HOT POC Projects
 
-![HOT POC - Automation Project](https://github.com/user-attachments/assets/734ba0ba-9505-41e8-b27f-b4747a98f51f)
+<img width="900" height="250" alt="HOTPOC_Project (1)" src="https://github.com/user-attachments/assets/6ad4ce4d-5d93-4b85-9701-381d07f20655" />
 
-https://img.shields.io/badge/any_HOT APP_AndroidTV
+https://img.shields.io/badge/any_HOT_APP_AndroidTV
