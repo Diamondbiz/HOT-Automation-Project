@@ -9,8 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/network/members)
 
-![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
-![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC?style=flat&color=blue)
+
 ![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
 ![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC?color=green)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
@@ -76,7 +75,6 @@ Soft:
 * Selenium WebDriver (Web Automation)
     CLI: version check: 
          version update:
-         
          Version update via the web: https://www.selenium.dev/downloads/
 
 * adb bridge
