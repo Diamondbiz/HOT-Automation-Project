@@ -21,6 +21,9 @@
 ![npm](https://img.shields.io/github/package-json/dependency-version/hanangoverman/HOT-POC/npm?logo=npm)
 ![Node.js & npm](https://img.shields.io/badge/node%20%26%20npm-see%20package.json-orange)
 
+[![GitHub Stars](https://img.shields.io/github/stars/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Diamondbiz/HOT-POC?style=social)](https://github.com/Diamondbiz/HOT-POC/network/members)
+
 HOT Smart TV Automation Testing (PoC)
 
 Project Overview
