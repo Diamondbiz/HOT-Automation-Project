@@ -6,6 +6,7 @@ HOT POC Projects
 
 
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
+![](https://img.shields.io/badge/UIautomator2-green)
 
 
 ![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
