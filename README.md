@@ -13,6 +13,7 @@
 ![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
 ![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC?color=green)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
+![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2?logo=appium)
 ![Appium](https://img.shields.io/badge/nodejs-2.11.3-%238a2be2)
 
 
