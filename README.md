@@ -12,6 +12,11 @@ HOT POC Projects
 ![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
 ![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC?style=flat&color=blue)
 ![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
+
+
+![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&color=yellow)
+![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC?style=flat&color=blue)
+![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC?color=red)
 ![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC?color=green)
 ![Appium](https://img.shields.io/badge/Appium-2.11.3-%238a2be2)
 
