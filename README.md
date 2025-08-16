@@ -7,9 +7,8 @@ HOT POC Projects
 
 ![](https://img.shields.io/badge/BigScreen-AndoridTV-blue)
 
-![](https://img.shields.io/github/stars-blue)
-![](https://img.shields.io/github/forks-blue)
-![](https://img.shields.io/github/tag-blue)
-![](https://img.shields.io/github/release-blue)
-![](https://img.shields.io/github/issues-blue)
-![](https://img.shields.io/bower-blue)
+
+![Stars](https://img.shields.io/github/stars/hanangoverman/HOT-POC?style=flat&logo=github)
+![Forks](https://img.shields.io/github/forks/hanangoverman/HOT-POC?style=flat)
+![Issues](https://img.shields.io/github/issues/hanangoverman/HOT-POC)
+![Releases](https://img.shields.io/github/v/release/hanangoverman/HOT-POC)
