@@ -1,6 +1,7 @@
 # HOT-POC
 HOT POC Projects
 
-<img width="900" height="250" alt="HOTPOC_Project (1)" src="https://github.com/user-attachments/assets/6ad4ce4d-5d93-4b85-9701-381d07f20655" />
+![WhatsApp Image 2025-08-16 at 14 35 23](https://github.com/user-attachments/assets/7157a1fc-77bf-4dc6-bb87-3e8edb7327b0)
 
-https://img.shields.io/badge/any_HOT_APP_AndroidTV
+
+!https://img.shields.io/badge/any_HOT_APP_AndroidTV
