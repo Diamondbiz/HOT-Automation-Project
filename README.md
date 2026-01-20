@@ -24,128 +24,73 @@
 
 
 
-HOT Smart TV Automation Testing (PoC)
+# HOT App – Big Screen UI Automation PoC
 
-Project Overview
+## 📌 Project Overview
+This project is a Proof of Concept (PoC) created to demonstrate professional-grade UI automation practices in a real-life constrained environment.
 
-This Proof of Concept (PoC) automates functional testing for the HOT Smart TV application, a hybrid (web app on Android) streaming platform. The automation framework leverages Appium 2.0 with UiAutomator2 for native Android interactions and Selenium WebDriver for web-based components.
+The PoC focuses on testing a web application running in a mobile (big screen) environment, using Java-based automation with Selenium and Appium.
 
+---
 
-Testing Environment
-Hardware:
-1. PC/Laptop - MACBOOK Pro M1 
-2. Device Under Test: Android 14 (Streaming Device)
+## 🎯 Goals
+- Design a clean and scalable UI automation architecture
+- Implement maintainable and readable automated tests
+- Reduce test execution and maintenance time
+- Apply best practices used in real automation teams
 
-Soft:
+---
 
-1. Tested Application: HOT Smart TV (Hybrid - WebView + Native)
-   The SDK file will be provided by developers.
+## 🧪 Application Under Test (AUT)
+- Web application
+- Executed in a mobile environment (big screen / tablet-style UI)
+- No backend or API access available
 
-2. Automation Framework: Appium 2.0
-   CLI: version check: 
-        version update:
+---
 
-3. Native Android Tool: UiAutomator 2.0
-   CLI: version check: 
-        version update:
+## 🧰 Tech Stack
+- **Java 21**
+- **Selenium 4**
+- **Appium**
+- **UIAutomator2**
+- **TestNG**
+- **Maven**
+- **Allure Reports**
+- **Node.js & npm** (Appium dependency)
 
-4. Programming Language: Java
-   CLI: version check: java -version
-        version update: Latest LTS: Oracle JDK - https://www.oracle.com/java/technologies/downloads/?er=221886
-                                    OpenJDK - https://openjdk.org/projects/jdk/
+---
 
-5.IDE: IntelliJ IDE
+## 🏗 Architecture & Design
+- Page Object Model (POM)
+- Base Test abstraction
+- Driver / Session factory
+- Clear separation of test logic and UI interactions
+- Architecture designed for future scalability
 
-6. NodeJS: 
-    CLI: version check: node -v
-         Resoudce and update: https://nodejs.org/en
-         Version install/update:
-         # Using nvm (recommended)
-         nvm install --lts
-         nvm use --lts
-         # Homebrew (macOS)
-         brew upgrade node
-         # Windows (via nvm-windows)
-         nvm install latest
+---
 
-6. Additional Tools:
-* npm (Dependency Management)
-    CLI: version check: npm -v
-         version update: npm install -g npm@latest
+## ⛓ Constraints
+- No backend access
+- Manual tester role
+- Time-limited PoC (1 month)
+- Focus on quality over quantity
 
-* Selenium WebDriver (Web Automation)
-    CLI: version check: 
-         version update:
-         Version update via the web: https://www.selenium.dev/downloads/
+---
 
-* adb bridge
+## 👀 What This Project Demonstrates
+- Professional automation project structure
+- Conscious technical decisions and trade-offs
+- Readable, maintainable, and scalable tests
+- Real-world automation mindset
 
+---
 
-7. Google Chrome browser- Last version source: https://chromereleases.googleblog.com/
--CLI: version check on MAC:
-   -GUI Method:
-   1. Open Google Chrome
-   2. Click Chrome → About Google Chrome in the menu bar
-   3. You'll see the full version (e.g., 124.0.6367.91)
--Version update:
-   1. Open Google Chrome
-   2. Click Chrome → About Google Chrome in the menu bar
-   3. You'll see the full version (e.g., 124.0.6367.91)
-   4. Click on update and then restart the browser
-    
--Command Line Alternative (macOS)
--If you installed Chrome via Homebrew: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
--Update homebrew (if needed): brew update && brew upgrade
--Version Update via CLI:
-         1. Brew upgrade --cask google-chrome
-         2. Veryfy update: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
-         3. Restart the browser
+## 🚀 Future Improvements
+- Test data management
+- Parallel execution
+- CI integration
+- API layer (if access becomes available)
 
-PoC Project main goals:
-
-The main goals of test automation creation are to enhance software quality, improve efficiency, and support continuous delivery while reducing risks and costs. Here’s a breakdown of the key objectives:
-
-
-1. Improve Testing Efficiency
-- Speed: Execute tests faster than manual testing (e.g., run hundreds of tests in minutes).
-- Reusability: Reuse test scripts across different platforms, OS, versions/features.
-- 24/7 Execution: Run tests overnight or in CI/CD pipelines (e.g., with GitHub Actions/Jenkins).
-
-2. Enhance Test Coverage
-- Broad Scenarios: Cover more features, edge cases, and configurations (e.g., cross-browser/device testing).
-- Regression Testing: Automatically verify existing functionality after changes.
-
-3. Ensure Consistency & Accuracy
-- Eliminate Human Error: Avoid manual mistakes in repetitive tests.
-- Standardized Checks: Follow predefined assertions (e.g., validate APIs with statusCode: 200).
-
-4. Support Agile/DevOps Practices
-- CI/CD Integration: Automate tests in pipelines (e.g., run on every git push).
-- Fast Feedback: Provide immediate results to developers (e.g., block broken builds).
-
-5. Reduce Costs & Resources
-- Long-Term Savings: Lower costs compared to manual testing over time.
-- Parallel Execution: Run tests simultaneously on multiple environments (e.g., Selenium Grid).
-
-6. Facilitate Early Bug Detection
-- Shift-Left Testing: Catch issues early in development (e.g., unit/integration tests).
-- Continuous Monitoring: Track performance/errors in production-like environments.
-
-7. Improve Reporting & Transparency
-- Detailed Logs: Generate automated reports (e.g., Allure/Extent Reports).
-- Metrics Tracking: Measure flakiness, pass/fail rates, and test duration.
-
-8. Enable Scalability
-- Adapt to Growth: Scale tests for new features without linear effort increases.
-- Cross-Platform: Support web, mobile (Appium), APIs, and desktop apps.
-
-Key Tools to Achieve These Goals
-Goal	Example Tools
-Web Testing - Selenium, Cypress, Playwright
-Mobile Testing -Appium, Espresso, XCUITest
-API Testing	Postman, RestAssured, SuperTest
-Performance - JMeter, k6
-CI/CD Integration	- Jenkins, GitHub Actions, CircleCI, Docker
 
 
 
