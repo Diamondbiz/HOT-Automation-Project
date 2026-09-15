@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -36,14 +37,14 @@ public class DeviceController {
         return shell("exec-out", "cat", "/sdcard/ui.xml");
     }
 
-    /** Writes a PNG of the current screen to the given path. */
+    /** Writes a PNG of the current screen to the given path, overwriting any existing file. */
     public void screenshot(Path out) throws IOException {
         Files.createDirectories(out.getParent());
         List<String> cmd = List.of("adb", "-s", TestConfig.DEVICE_UDID,
                 "exec-out", "screencap", "-p");
         Process p = new ProcessBuilder(cmd).start();
         try (InputStream in = p.getInputStream()) {
-            Files.copy(in, out);
+            Files.copy(in, out, StandardCopyOption.REPLACE_EXISTING);
         }
         waitFor(p);
     }
