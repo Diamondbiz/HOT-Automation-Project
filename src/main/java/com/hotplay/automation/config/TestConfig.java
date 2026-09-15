@@ -1,35 +1,36 @@
 package com.hotplay.automation.config;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public final class TestConfig {
-
     private TestConfig() {}
 
-    // ---- Device ----
-    public static final String DEVICE_UDID   = "RFGL30LRKQY";
-    public static final String DEVICE_MODEL  = "Samsung Galaxy S26";
-    public static final String ANDROID_VER   = "Android 16";
+    // --- Device ---
+    public static final String DEVICE_UDID = "192.168.1.167:5555";
 
-    // ---- App under test ----
-    public static final String PACKAGE  = "com.applicaster.il.hotvod";
-    public static final String ACTIVITY = "il.net.hot.sharedvod.ui.activities.SplashActivity";
+    // --- App (real values from your dumps) ---
+    public static final String HOT_PACKAGE  = "com.applicaster.il.hotvod";
+    public static final String HOT_ACTIVITY =
+            "il.net.hot.sharedvod.ui.activities.SplashActivity";
 
-    // ---- Orientation ----
-    public static final int PORTRAIT  = 0;
-    public static final int LANDSCAPE = 1;
+    // --- Test data ---
+    public static final String ID_NUMBER    = "999286578";
+    public static final String PHONE_NUMBER = "0543501323";
+    public static final String OTP_CODE     = "123456";
 
-    // ---- Timeouts (ms) ----
-    public static final long APP_LAUNCH_WAIT_MS  = 15_000;
-    public static final long UI_SETTLE_WAIT_MS   = 1_500;
-    public static final long ADB_COMMAND_TIMEOUT = 30_000;
+    // --- Paths ---
+    public static final String PROJECT_ROOT  = "/Users/Johnny/IdeaProjects/POC";
+    public static final String SCREENS_DIR   = PROJECT_ROOT + "/Screens";
+    public static final String EXPECTED_DIR  = SCREENS_DIR + "/Expected";
+    public static final String CURRENT_DIR   = SCREENS_DIR + "/Current screen";
+    public static final String FAIL_DIR      = SCREENS_DIR + "/Fail";
+    public static final String LOGS_DIR      = PROJECT_ROOT + "/logs";
+    public static final String XML_DIR       = PROJECT_ROOT + "/xml";
 
-    // ---- Project paths ----
-    public static final Path PROJECT_ROOT = Paths.get(
-            System.getProperty("user.home"),
-            "IdeaProjects", "POC-Mobile-Android");
-    public static final Path XML_DIR      = PROJECT_ROOT.resolve("xml");
-    public static final Path SCREENS_DIR  = PROJECT_ROOT.resolve("screens");
-    public static final Path LOGS_DIR     = PROJECT_ROOT.resolve("logs");
+    // --- Timeouts (ms) ---
+    public static final long APP_LOAD_TIMEOUT    = 30_000;
+    public static final long SCREEN_WAIT_TIMEOUT = 15_000;
+    public static final long POLL_INTERVAL       = 500;
+
+    // --- Image comparison ---
+    public static final double SIMILARITY_THRESHOLD = 95.0;
+    public static final int    PIXEL_TOLERANCE      = 10;
 }

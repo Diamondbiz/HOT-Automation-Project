@@ -37,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# --- uiautomator dumps (test artifacts, never commit) ---
+/ui-after-login.xml
+/xml/

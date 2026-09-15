@@ -2,131 +2,102 @@ package com.hotplay.automation.core;
 
 import com.hotplay.automation.config.TestConfig;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * All ADB I/O goes through here. No other class should call ProcessBuilder directly.
- */
 public class DeviceController {
 
-    // ---------- Public API ----------
+    private final String udid;
 
-    public void launchApp() {
-        shell("am", "start", "-n",
-                TestConfig.PACKAGE + "/" + TestConfig.ACTIVITY);
-    }
+    public DeviceController(String udid) { this.udid = udid; }
+    public DeviceController() { this(TestConfig.DEVICE_UDID); }
 
-    public void lockOrientation(int orientation) {
-        shell("settings", "put", "system", "accelerometer_rotation", "0");
-        shell("settings", "put", "system", "user_rotation", String.valueOf(orientation));
-    }
+    // ---- process plumbing (unchanged) ----
 
-    /** Returns the raw uiautomator XML as a String. */
-    public String dumpUi() {
-        shell("uiautomator", "dump", "/sdcard/ui.xml");
-        return shell("exec-out", "cat", "/sdcard/ui.xml");
-    }
-
-    /** Writes a PNG of the current screen to the given path, overwriting any existing file. */
-    public void screenshot(Path out) throws IOException {
-        Files.createDirectories(out.getParent());
-        List<String> cmd = List.of("adb", "-s", TestConfig.DEVICE_UDID,
-                "exec-out", "screencap", "-p");
-        Process p = new ProcessBuilder(cmd).start();
-        try (InputStream in = p.getInputStream()) {
-            Files.copy(in, out, StandardCopyOption.REPLACE_EXISTING);
-        }
-        waitFor(p);
-    }
-
-    /** Returns e.g. "com.applicaster.il.hotvod" (the foreground package), or "" if unknown. */
-    public String currentFocus() {
-        String out = shell("shell", "dumpsys", "window");
-        for (String line : out.split("\n")) {
-            int idx = line.indexOf("mCurrentFocus=");
-            if (idx >= 0) {
-                String tail = line.substring(idx);
-                int slash = tail.indexOf('/');
-                if (slash > 0) {
-                    String pkgPart = tail.substring(0, slash);
-                    int space = pkgPart.lastIndexOf(' ');
-                    return pkgPart.substring(space + 1).trim();
-                }
-            }
-        }
-        return "";
-    }
-
-    /**
-     * Polls until the foreground package matches the expected one, or times out.
-     * Returns true if the expected package appeared, false on timeout.
-     */
-    public boolean waitForForeground(String expectedPackage, long timeoutMs) {
-        long deadline = System.currentTimeMillis() + timeoutMs;
-        while (System.currentTimeMillis() < deadline) {
-            String focus = currentFocus();
-            if (expectedPackage.equals(focus)) return true;
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                return false;
-            }
-        }
-        return false;
-    }
-
-    /** Exposes shell() for ad-hoc diagnostics (e.g. logcat). */
-    public String rawShell(String... args) {
-        return shell(args);
-    }
-
-    // ---------- Internals ----------
-
-    private String shell(String... args) {
-        List<String> cmd = new ArrayList<>();
-        cmd.add("adb");
-        cmd.add("-s");
-        cmd.add(TestConfig.DEVICE_UDID);
-        for (String a : args) cmd.add(a);
-
+    private String sh(String... args) {
         try {
-            ProcessBuilder pb = new ProcessBuilder(cmd);
-            pb.redirectErrorStream(true);
-            Process p = pb.start();
-
-            StringBuilder sb = new StringBuilder();
-            try (BufferedReader r = new BufferedReader(
-                    new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {
-                String line;
-                while ((line = r.readLine()) != null) sb.append(line).append('\n');
-            }
-            waitFor(p);
-            return sb.toString();
-        } catch (IOException e) {
-            throw new RuntimeException("ADB command failed: " + String.join(" ", cmd), e);
+            String[] cmd = new String[args.length + 3];
+            cmd[0] = "adb"; cmd[1] = "-s"; cmd[2] = udid;
+            System.arraycopy(args, 0, cmd, 3, args.length);
+            Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
+            String out = read(p.getInputStream());
+            p.waitFor(20, TimeUnit.SECONDS);
+            return out.trim();
+        } catch (Exception e) {
+            throw new RuntimeException("adb " + String.join(" ", args), e);
         }
     }
 
-    private void waitFor(Process p) {
+    private void shNoOut(String... args) { sh(args); }
+
+    private static String read(InputStream in) throws IOException {
+        ByteArrayOutputStream b = new ByteArrayOutputStream();
+        byte[] buf = new byte[4096]; int n;
+        while ((n = in.read(buf)) != -1) b.write(buf, 0, n);
+        return b.toString(StandardCharsets.UTF_8);
+    }
+
+    // ---- connection ----
+
+    public boolean isConnected() {
+        try { return sh("get-state").contains("device"); }
+        catch (Exception e) { return false; }
+    }
+
+    public void connect() {
+        try { new ProcessBuilder("adb", "connect", udid)
+                .redirectErrorStream(true).start().waitFor(); }
+        catch (Exception e) { throw new RuntimeException("adb connect failed", e); }
+    }
+
+    // ---- app lifecycle ----
+
+    public void clearAppData(String pkg)  { shNoOut("shell", "pm", "clear", pkg); }
+    public void forceStopApp(String pkg)  { shNoOut("shell", "am", "force-stop", pkg); }
+    public void launchApp(String pkg, String activity) {
+        shNoOut("shell", "am", "start", "-n", pkg + "/" + activity);
+    }
+
+    // ---- UI hierarchy — NOW returns UiNode ----
+
+    /** Dump the UI and parse it into a UiNode tree. */
+    public UiNode dumpUi() {
+        return XmlParser.parse(dumpUiXml());
+    }
+
+    /** Raw XML string (kept for logging / archival). */
+    public String dumpUiXml() {
+        shNoOut("shell", "uiautomator", "dump", "/sdcard/window_dump.xml");
+        return sh("shell", "cat", "/sdcard/window_dump.xml");
+    }
+
+    public String dumpUiXmlToFile(String tag) {
+        String xml = dumpUiXml();
         try {
-            if (!p.waitFor(TestConfig.ADB_COMMAND_TIMEOUT, TimeUnit.MILLISECONDS)) {
-                p.destroyForcibly();
-                throw new RuntimeException("ADB command timed out");
+            new File(TestConfig.XML_DIR).mkdirs();
+            File f = new File(TestConfig.XML_DIR, tag + "_" + System.currentTimeMillis() + ".xml");
+            try (Writer w = new OutputStreamWriter(new FileOutputStream(f), StandardCharsets.UTF_8)) {
+                w.write(xml);
             }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException(e);
-        }
+            return f.getAbsolutePath();
+        } catch (IOException e) { return null; }
     }
+
+    // ---- screenshots ----
+
+    public void screenshot(String localPath) {
+        String remote = "/sdcard/screen.png";
+        shNoOut("shell", "screencap", "-p", remote);
+        new File(localPath).getParentFile().mkdirs();
+        shNoOut("pull", remote, localPath);
+        shNoOut("shell", "rm", remote);
+    }
+
+    // ---- input ----
+
+    public void tap(int x, int y)  { shNoOut("shell", "input", "tap", String.valueOf(x), String.valueOf(y)); }
+    public void tap(UiNode node)   { tap(node.centerX(), node.centerY()); }
+    public void key(int keyCode)   { shNoOut("shell", "input", "keyevent", String.valueOf(keyCode)); }
+    public void text(String s)     { shNoOut("shell", "input", "text", s.replace(" ", "%s")); }
 }
