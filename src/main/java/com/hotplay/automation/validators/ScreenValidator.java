@@ -1,0 +1,4 @@
+package com.hotplay.automation.validators;
+
+public class ScreenValidator {
+}
